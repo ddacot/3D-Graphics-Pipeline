@@ -15,26 +15,23 @@ A more in-depth explanation of the system can be found in the [technical manual]
 ## **Results**
 <details>
   <summary>Shaded Triangle</summary>
-<img src="documentation/results_img/shaded_triangle_big.jpg" width="500"> 
+<img src="https://github.com/ddacot/3D-Graphics-Pipeline/blob/main/documentation/results_img/shaded_triangle_big.JPG" width="500"> 
 </details>
 
 <details>
   <summary>A helix of triangles</summary>
-<img src="documentation/results_img/triangle_helix.jpg" width="500"> 
+<img src="https://github.com/ddacot/3D-Graphics-Pipeline/blob/main/documentation/results_img/triangle_helix.JPG" width="500"> 
 </details>
 
 <details>
   <summary>Human face obj model</summary>
-<img src="documentation/results_img/obj_human_model.jpg" width="500"> 
+<img src="https://github.com/ddacot/3D-Graphics-Pipeline/blob/main/documentation/results_img/obj_human_model.JPG" width="500"> 
 </details>
 
 <details>
   <summary>Rendering of 100,000 triangles</summary>
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="documentation/results_img/triangles.mp4" type="video/mp4">
-  </video>
-</figure>
+https://github.com/ddacot/3D-Graphics-Pipeline/blob/main/documentation/results_img/triangles.mp4
+
 </details>
 
 
