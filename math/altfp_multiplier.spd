@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="altfp_multiplier_sim/altfp_multiplier.vo" type="VERILOG" />
+ <topLevel name="altfp_multiplier" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

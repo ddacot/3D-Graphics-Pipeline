@@ -1,0 +1,60 @@
+	component gpu_qsys is
+		port (
+			clk_clk                                 : in    std_logic                     := 'X';             -- clk
+			gpu_main_external_interface_address     : in    std_logic_vector(29 downto 0) := (others => 'X'); -- address
+			gpu_main_external_interface_byte_enable : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- byte_enable
+			gpu_main_external_interface_read        : in    std_logic                     := 'X';             -- read
+			gpu_main_external_interface_write       : in    std_logic                     := 'X';             -- write
+			gpu_main_external_interface_write_data  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- write_data
+			gpu_main_external_interface_acknowledge : out   std_logic;                                        -- acknowledge
+			gpu_main_external_interface_read_data   : out   std_logic_vector(31 downto 0);                    -- read_data
+			instr_fifo_out_valid                    : out   std_logic;                                        -- valid
+			instr_fifo_out_data                     : out   std_logic_vector(31 downto 0);                    -- data
+			instr_fifo_out_ready                    : in    std_logic                     := 'X';             -- ready
+			memory_mem_a                            : out   std_logic_vector(12 downto 0);                    -- mem_a
+			memory_mem_ba                           : out   std_logic_vector(2 downto 0);                     -- mem_ba
+			memory_mem_ck                           : out   std_logic;                                        -- mem_ck
+			memory_mem_ck_n                         : out   std_logic;                                        -- mem_ck_n
+			memory_mem_cke                          : out   std_logic;                                        -- mem_cke
+			memory_mem_cs_n                         : out   std_logic;                                        -- mem_cs_n
+			memory_mem_ras_n                        : out   std_logic;                                        -- mem_ras_n
+			memory_mem_cas_n                        : out   std_logic;                                        -- mem_cas_n
+			memory_mem_we_n                         : out   std_logic;                                        -- mem_we_n
+			memory_mem_reset_n                      : out   std_logic;                                        -- mem_reset_n
+			memory_mem_dq                           : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- mem_dq
+			memory_mem_dqs                          : inout std_logic                     := 'X';             -- mem_dqs
+			memory_mem_dqs_n                        : inout std_logic                     := 'X';             -- mem_dqs_n
+			memory_mem_odt                          : out   std_logic;                                        -- mem_odt
+			memory_mem_dm                           : out   std_logic;                                        -- mem_dm
+			memory_oct_rzqin                        : in    std_logic                     := 'X';             -- oct_rzqin
+			prim_assembly_fifo_in_valid             : in    std_logic                     := 'X';             -- valid
+			prim_assembly_fifo_in_data              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			prim_assembly_fifo_in_ready             : out   std_logic;                                        -- ready
+			prim_assembly_fifo_out_valid            : out   std_logic;                                        -- valid
+			prim_assembly_fifo_out_data             : out   std_logic_vector(31 downto 0);                    -- data
+			prim_assembly_fifo_out_ready            : in    std_logic                     := 'X';             -- ready
+			raster_fifo_in_valid                    : in    std_logic                     := 'X';             -- valid
+			raster_fifo_in_data                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			raster_fifo_in_ready                    : out   std_logic;                                        -- ready
+			raster_fifo_out_valid                   : out   std_logic;                                        -- valid
+			raster_fifo_out_data                    : out   std_logic_vector(31 downto 0);                    -- data
+			raster_fifo_out_ready                   : in    std_logic                     := 'X';             -- ready
+			reset_reset                             : in    std_logic                     := 'X';             -- reset
+			vert_processing_fifo_in_valid           : in    std_logic                     := 'X';             -- valid
+			vert_processing_fifo_in_data            : in    std_logic_vector(31 downto 0) := (others => 'X'); -- data
+			vert_processing_fifo_in_ready           : out   std_logic;                                        -- ready
+			vert_processing_fifo_out_valid          : out   std_logic;                                        -- valid
+			vert_processing_fifo_out_data           : out   std_logic_vector(31 downto 0);                    -- data
+			vert_processing_fifo_out_ready          : in    std_logic                     := 'X';             -- ready
+			vga_controller_external_interface_CLK   : out   std_logic;                                        -- CLK
+			vga_controller_external_interface_HS    : out   std_logic;                                        -- HS
+			vga_controller_external_interface_VS    : out   std_logic;                                        -- VS
+			vga_controller_external_interface_BLANK : out   std_logic;                                        -- BLANK
+			vga_controller_external_interface_SYNC  : out   std_logic;                                        -- SYNC
+			vga_controller_external_interface_R     : out   std_logic_vector(7 downto 0);                     -- R
+			vga_controller_external_interface_G     : out   std_logic_vector(7 downto 0);                     -- G
+			vga_controller_external_interface_B     : out   std_logic_vector(7 downto 0);                     -- B
+			video_pll_ref_clk_clk                   : in    std_logic                     := 'X'              -- clk
+		);
+	end component gpu_qsys;
+

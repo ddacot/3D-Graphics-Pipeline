@@ -1,0 +1,41 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst gpu_qsys.pixel_fifo_mod -pg 1 -lvl 2 -y 470
+preplace inst gpu_qsys.vga_controller -pg 1 -lvl 3 -y 550
+preplace inst gpu_qsys.instr_fifo -pg 1 -lvl 3 -y 70
+preplace inst gpu_qsys.video_pll.reset_from_locked -pg 1
+preplace inst gpu_qsys.reset_bridge -pg 1 -lvl 2 -y 870
+preplace inst gpu_qsys.gpu_main -pg 1 -lvl 2 -y 630
+preplace inst gpu_qsys.vert_processing_fifo -pg 1 -lvl 3 -y 730
+preplace inst gpu_qsys -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst gpu_qsys.address_span_extender -pg 1 -lvl 3 -y 650
+preplace inst gpu_qsys.video_pll.video_pll -pg 1
+preplace inst gpu_qsys.prim_assembly_fifo -pg 1 -lvl 3 -y 230
+preplace inst gpu_qsys.pll -pg 1 -lvl 2 -y 30
+preplace inst gpu_qsys.video_pll -pg 1 -lvl 1 -y 680
+preplace inst gpu_qsys.raster_fifo -pg 1 -lvl 3 -y 390
+preplace inst gpu_qsys.pixel_dma -pg 1 -lvl 1 -y 510
+preplace netloc POINT_TO_POINT<net_container>gpu_qsys</net_container>(SLAVE)pixel_fifo_mod.avalon_dc_buffer_sink,(MASTER)pixel_dma.avalon_pixel_source) 1 1 1 660
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)vert_processing_fifo.out,(MASTER)gpu_qsys.vert_processing_fifo_out) 1 3 1 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)gpu_qsys.reset_in,(SLAVE)reset_bridge.in_reset) 1 0 2 NJ 900 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)raster_fifo.out,(MASTER)gpu_qsys.raster_fifo_out) 1 3 1 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)instr_fifo.in,(SLAVE)gpu_qsys.instr_fifo_in) 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)gpu_qsys.video_pll_ref_clk,(SLAVE)video_pll.ref_clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)vert_processing_fifo.in,(SLAVE)gpu_qsys.vert_processing_fifo_in) 1 0 3 NJ 780 NJ 780 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)pll.refclk,(SLAVE)gpu_qsys.clk) 1 0 2 NJ 40 NJ
+preplace netloc FAN_OUT<net_container>gpu_qsys</net_container>(SLAVE)gpu_main.clk,(SLAVE)instr_fifo.clk_out,(SLAVE)vert_processing_fifo.clk_out,(SLAVE)pixel_fifo_mod.clock_stream_in,(SLAVE)vert_processing_fifo.clk_in,(SLAVE)pixel_dma.clk,(SLAVE)instr_fifo.clk_in,(SLAVE)address_span_extender.clock,(SLAVE)prim_assembly_fifo.clk_out,(SLAVE)reset_bridge.clk,(SLAVE)raster_fifo.clk_in,(SLAVE)raster_fifo.clk_out,(SLAVE)prim_assembly_fifo.clk_in,(MASTER)pll.outclk0) 1 0 3 230 500 700 720 1070
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)gpu_qsys.pll_outclk,(MASTER)pll.outclk1) 1 2 2 NJ 60 NJ
+preplace netloc POINT_TO_POINT<net_container>gpu_qsys</net_container>(MASTER)gpu_main.avalon_master,(SLAVE)address_span_extender.windowed_slave) 1 2 1 1010
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)prim_assembly_fifo.in,(SLAVE)gpu_qsys.prim_assembly_fifo_in) 1 0 3 NJ 280 NJ 280 NJ
+preplace netloc FAN_OUT<net_container>gpu_qsys</net_container>(SLAVE)pixel_fifo_mod.reset_stream_out,(SLAVE)vga_controller.reset,(MASTER)video_pll.reset_source) 1 1 2 660 620 NJ
+preplace netloc FAN_OUT<net_container>gpu_qsys</net_container>(SLAVE)vert_processing_fifo.reset_out,(SLAVE)video_pll.ref_reset,(SLAVE)prim_assembly_fifo.reset_in,(SLAVE)address_span_extender.reset,(SLAVE)instr_fifo.reset_out,(SLAVE)gpu_main.reset,(SLAVE)pixel_fifo_mod.reset_stream_in,(SLAVE)pixel_dma.reset,(SLAVE)vert_processing_fifo.reset_in,(SLAVE)instr_fifo.reset_in,(MASTER)reset_bridge.out_reset,(SLAVE)raster_fifo.reset_in,(SLAVE)prim_assembly_fifo.reset_out,(SLAVE)raster_fifo.reset_out) 1 0 3 230 640 680 740 1030
+preplace netloc POINT_TO_POINT<net_container>gpu_qsys</net_container>(SLAVE)vga_controller.avalon_vga_sink,(MASTER)pixel_fifo_mod.avalon_dc_buffer_source) 1 2 1 1010
+preplace netloc FAN_OUT<net_container>gpu_qsys</net_container>(SLAVE)vga_controller.clk,(SLAVE)pixel_fifo_mod.clock_stream_out,(MASTER)video_pll.vga_clk) 1 1 2 640 600 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)gpu_qsys.instr_fifo_out,(MASTER)instr_fifo.out) 1 3 1 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)gpu_qsys.prim_assembly_fifo_out,(MASTER)prim_assembly_fifo.out) 1 3 1 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)gpu_qsys.gpu_main_external_interface,(SLAVE)gpu_main.external_interface) 1 0 2 NJ 620 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(MASTER)gpu_qsys.reset_out1,(MASTER)reset_bridge.out_reset_1) 1 2 2 NJ 900 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)gpu_qsys.vga_controller_external_interface,(SLAVE)vga_controller.external_interface) 1 0 3 NJ 760 NJ 760 NJ
+preplace netloc EXPORT<net_container>gpu_qsys</net_container>(SLAVE)raster_fifo.in,(SLAVE)gpu_qsys.raster_fifo_in) 1 0 3 NJ 440 NJ 440 NJ
+levelinfo -pg 1 0 200 1480
+levelinfo -hier gpu_qsys 210 310 730 1130 1300

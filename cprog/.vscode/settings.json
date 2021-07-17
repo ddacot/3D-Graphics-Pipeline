@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "hps_0.h": "c",
+        "hps.h": "c",
+        "vector": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "system.h": "c",
+        "types.h": "c",
+        "chrono": "cpp"
+    }
+}

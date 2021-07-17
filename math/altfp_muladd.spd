@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="altfp_muladd_sim/altfp_muladd.vo" type="VERILOG" />
+ <topLevel name="altfp_muladd" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

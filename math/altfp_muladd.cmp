@@ -1,0 +1,11 @@
+	component altfp_muladd is
+		port (
+			clk    : in  std_logic                     := 'X';             -- clk
+			areset : in  std_logic                     := 'X';             -- reset
+			a      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- a
+			b      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- b
+			c      : in  std_logic_vector(31 downto 0) := (others => 'X'); -- c
+			q      : out std_logic_vector(31 downto 0)                     -- q
+		);
+	end component altfp_muladd;
+
